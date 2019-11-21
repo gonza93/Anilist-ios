@@ -1,2 +1,2 @@
 # Anilist-ios
-iOS cliente for MyAnimeList
+iOS client for MyAnimeList
