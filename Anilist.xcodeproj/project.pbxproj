@@ -15,6 +15,8 @@
 		CDF902F423875950003AE214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF902F223875950003AE214 /* LaunchScreen.storyboard */; };
 		CDF902FF23875950003AE214 /* AnilistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF902FE23875950003AE214 /* AnilistTests.swift */; };
 		CDF9030A23875950003AE214 /* AnilistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9030923875950003AE214 /* AnilistUITests.swift */; };
+		CDF9031B23876B71003AE214 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9031A23876B71003AE214 /* HomeTabView.swift */; };
+		CDF9031D23876BF5003AE214 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9031C23876BF5003AE214 /* SearchTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CDF9030523875950003AE214 /* AnilistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnilistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF9030923875950003AE214 /* AnilistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnilistUITests.swift; sourceTree = "<group>"; };
 		CDF9030B23875950003AE214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF9031A23876B71003AE214 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		CDF9031C23876BF5003AE214 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 		CDF902E62387594B003AE214 /* Anilist */ = {
 			isa = PBXGroup;
 			children = (
+				CDF9031923876B32003AE214 /* ViewModel */,
+				CDF9031823876B1E003AE214 /* Model */,
+				CDF9031723876B0E003AE214 /* View */,
 				CDF902E72387594B003AE214 /* AppDelegate.swift */,
 				CDF902E92387594B003AE214 /* SceneDelegate.swift */,
-				CDF902EB2387594B003AE214 /* ContentView.swift */,
 				CDF902ED23875950003AE214 /* Assets.xcassets */,
 				CDF902F223875950003AE214 /* LaunchScreen.storyboard */,
 				CDF902F523875950003AE214 /* Info.plist */,
@@ -134,6 +140,30 @@
 				CDF9030B23875950003AE214 /* Info.plist */,
 			);
 			path = AnilistUITests;
+			sourceTree = "<group>";
+		};
+		CDF9031723876B0E003AE214 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDF902EB2387594B003AE214 /* ContentView.swift */,
+				CDF9031A23876B71003AE214 /* HomeTabView.swift */,
+				CDF9031C23876BF5003AE214 /* SearchTabView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDF9031823876B1E003AE214 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDF9031923876B32003AE214 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF902E82387594B003AE214 /* AppDelegate.swift in Sources */,
+				CDF9031D23876BF5003AE214 /* SearchTabView.swift in Sources */,
 				CDF902EA2387594B003AE214 /* SceneDelegate.swift in Sources */,
 				CDF902EC2387594B003AE214 /* ContentView.swift in Sources */,
+				CDF9031B23876B71003AE214 /* HomeTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
