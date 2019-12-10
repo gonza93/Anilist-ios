@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct SearchTabView: View {
+    @ObservedObject var animeListVM = AnimeListViewModel()
+    
+    init () {
+        self.animeListVM.searchAnime(query: "Air")
+    }
+    
     var body: some View {
-        Text("This is the search tab.")
+        NavigationView {
+            List (animeListVM.animesVM) { animeVM in
+                AnimeRowView(animeVM: animeVM)
+            }
+            .navigationBarTitle("Search")
+        }
     }
 }
 

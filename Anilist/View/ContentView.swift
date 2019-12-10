@@ -17,17 +17,17 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     Image(systemName: "house")
-                    Text("First")
+                    Text("Home")
                 }
                 .tag(0)
             SearchTabView()
                 .font(.title)
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("Second")
+                    Text("Search")
                 }
                 .tag(1)
-        }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
