@@ -10,7 +10,12 @@ import SwiftUI
 
 struct HomeTabView: View {
     var body: some View {
-        Text("This is the home tab.")
+        NavigationView {
+            ScrollView {
+                HomeAiringListView()
+            }
+            .navigationBarTitle("Home")
+        }
     }
 }
 

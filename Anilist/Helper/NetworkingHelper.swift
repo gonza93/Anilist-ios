@@ -16,9 +16,7 @@ class NetworkingHelper {
         self.session = session
     }
 
-    func call<T: Decodable>(endpoint: String,
-                queryItems: [URLQueryItem],
-                handler: @escaping (Result<T, Error>) -> Void) {
+    func call<T: Decodable>(endpoint: String, queryItems: [URLQueryItem], handler: @escaping (Result<T, Error>) -> Void) {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"

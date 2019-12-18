@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct AnimeRowView: View {
-    var animeVM: AnimeViewModel
+    var animeViewModel: AnimeViewModel
     
     var body: some View {
         HStack (alignment: .top, spacing: 10) {
-            ImageView(withURL: animeVM.imageURL)
-                .frame(width: 90, height: 140)
+            ImageView(withURL: animeViewModel.imageURL)
+                .frame(width: 80, height: 120)
                 .cornerRadius(18)
             
             VStack (alignment: .leading, spacing: 4) {
-                Text(verbatim: animeVM.title)
+                Text(verbatim: animeViewModel.title)
                     .font(.headline)
                 HStack (spacing: 12) {
                     HStack (spacing: 5) {
@@ -27,7 +27,7 @@ struct AnimeRowView: View {
                             .frame(width: 15, height: 15)
                             .foregroundColor(Color.blue)
                             .padding(.bottom, 2)
-                        Text(animeVM.score)
+                        Text(animeViewModel.score)
                             .font(.subheadline)
                             .foregroundColor(Color.blue)
                     }
@@ -36,7 +36,7 @@ struct AnimeRowView: View {
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
                     
-                    Text("\(animeVM.episodes) ep.")
+                    Text(animeViewModel.episodes)
                         .font(.subheadline)
                         .padding(.horizontal, 5)
                         .padding(.vertical, 2)
@@ -44,7 +44,7 @@ struct AnimeRowView: View {
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
                 }
-                Text(animeVM.synopsis)
+                Text(animeViewModel.synopsis)
                     .font(.subheadline)
             }
         }

@@ -11,7 +11,6 @@ import UIKit
 import SwiftUI
 
 let animeSearchData: [Anime] = load("searchData.json")
-let landmarkData: [Landmark] = load("landmarkData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

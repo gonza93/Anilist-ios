@@ -11,6 +11,7 @@ import Foundation
 
 struct Response : Decodable {
     
-    var results : [Anime]
+    var results: [Anime]?
+    var top: [Anime]?
     
 }

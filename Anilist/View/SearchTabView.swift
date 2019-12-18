@@ -9,24 +9,31 @@
 import SwiftUI
 
 struct SearchTabView: View {
-    @ObservedObject var animeListVM = AnimeListViewModel()
-    
-    init () {
-        self.animeListVM.searchAnime(query: "Air")
-    }
+    @ObservedObject var animeListViewModel = AnimeListViewModel()
+    @State var isLoading: Bool = false
     
     var body: some View {
         NavigationView {
-            List (animeListVM.animesVM) { animeVM in
-                AnimeRowView(animeVM: animeVM)
+            List {
+                SearchBarView() { (query) in
+                    self.search(query: query)
+                }
+                
+                ForEach (animeListViewModel.animesVM) { animeVM in
+                    AnimeRowView(animeViewModel: animeVM)
+                }
             }
             .navigationBarTitle("Search")
+            .navigationBarItems(trailing: ProgressView(isLoading: self.isLoading))
         }
     }
-}
-
-struct SearchTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchTabView()
+    
+    private func search(query: String) {
+        if query == "" { return }
+        self.isLoading = true;
+        self.animeListViewModel.animesVM = []
+        self.animeListViewModel.searchAnime(query: query)
+        self.isLoading = false;
     }
+    
 }

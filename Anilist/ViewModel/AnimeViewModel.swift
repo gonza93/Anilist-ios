@@ -18,17 +18,18 @@ class AnimeViewModel : ObservableObject, Identifiable {
         
         self.malID = anime.malID
         self.url = anime.url
-        self.imageURL = anime.imageURL
+        self.imageURL = anime.imageURL ?? ""
         self.title = anime.title
-        self.airing = anime.airing
-        self.synopsis = anime.synopsis
-        self.type = anime.type
-        self.episodes = String(anime.episodes)
-        self.score = String(format: "%.2f", anime.score)
-        self.startDate = dateFormatter.date(from: anime.endDate ?? "")!
+        self.airing = anime.airing ?? false
+        self.synopsis = anime.synopsis ?? "N/A"
+        self.type = anime.type ?? "N/A"
+        self.episodes = "\(anime.episodes ?? 0) ep."
+        self.score = String(format: "%.2f", anime.score ?? 0)
+        //self.startDate = dateFormatter.date(from: anime.endDate ?? "")!
+        self.startDate = Date()
         self.endDate = Date()
-        self.members = anime.members
-        self.rated = anime.rated
+        self.members = anime.members ?? 0
+        self.rated = anime.rated ?? "N/A"
     }
     
     var malID: Int

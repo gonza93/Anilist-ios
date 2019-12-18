@@ -13,16 +13,16 @@ struct Anime : Identifiable, Decodable {
     
     var malID: Int
     var url: String
-    var imageURL: String
+    var imageURL: String?
     var title: String
-    var airing: Bool
-    var synopsis: String
-    var type: String
-    var episodes: Int
-    var score: Double
+    var airing: Bool?
+    var synopsis: String?
+    var type: String?
+    var episodes: Int?
+    var score: Double?
     var startDate, endDate: String?
-    var members: Int
-    var rated: String
+    var members: Int?
+    var rated: String?
 
     enum CodingKeys: String, CodingKey {
         case malID = "mal_id"

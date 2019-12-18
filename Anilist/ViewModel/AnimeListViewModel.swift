@@ -20,4 +20,17 @@ class AnimeListViewModel : ObservableObject {
             }
         }
     }
+    
+    func getAiringAnime() {
+        JikanService().getAiringAnime(page: 1) { result in
+            switch result {
+            case .success(let airingAnime): DispatchQueue.main.async {
+                self.animesVM = airingAnime.prefix(20).compactMap { anime in
+                    anime.toViewModel()
+                }
+            }
+            case .failure(let error): print(error)
+            }
+        }
+    }
 }
